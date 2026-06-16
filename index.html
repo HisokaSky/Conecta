@@ -11,82 +11,146 @@
 
   :root {
     --cream: #F5F0E8;
+    --cream-dark: #EDE6D8;
     --wine: #6B1F2A;
     --wine-light: #8B2F3E;
     --rose: #C08080;
     --rose-pale: #E8D5D5;
     --gold: #C9A84C;
-    --gold-pale: #F0E8D0;
+    --gold-pale: #F5EDD5;
     --dark: #1A1014;
-    --dark-mid: #3D2830;
     --text-main: #2C1A20;
     --text-muted: #7A5560;
     --white: #FDFAF6;
-    --card-shadow: 0 8px 40px rgba(107,31,42,0.12);
-    --radius: 20px;
-    --radius-sm: 12px;
   }
 
   body {
     background: var(--cream);
     font-family: 'Inter', sans-serif;
     color: var(--text-main);
-    min-height: 100vh;
     overflow-x: hidden;
   }
 
-  /* ─── HOME SCREEN ─── */
-  #home {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px 40px;
-    background: linear-gradient(175deg, var(--white) 0%, var(--cream) 60%, var(--rose-pale) 100%);
-  }
-
-  .logo-area {
+  /* ─── HERO ─── */
+  .hero {
+    background: linear-gradient(170deg, var(--white) 0%, var(--cream) 70%, var(--rose-pale) 100%);
     text-align: center;
-    padding: 48px 0 32px;
+    padding: 60px 24px 56px;
   }
 
   .logo-symbol {
-    width: 64px;
-    height: 64px;
+    width: 60px;
+    height: 60px;
     background: var(--wine);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 16px;
-    position: relative;
-  }
-
-  .logo-symbol::after {
-    content: '✦';
+    margin: 0 auto 20px;
+    font-size: 24px;
     color: var(--gold);
-    font-size: 26px;
   }
 
-  .logo-title {
+  .hero h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 42px;
+    font-size: 44px;
     font-weight: 400;
     color: var(--wine);
     letter-spacing: 2px;
-    line-height: 1;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 
-  .logo-tagline {
-    font-size: 13px;
-    font-weight: 300;
+  .deco-line {
+    width: 40px;
+    height: 1px;
+    background: var(--rose);
+    margin: 14px auto;
+    opacity: 0.6;
+  }
+
+  .hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--text-main);
+    max-width: 320px;
+    margin: 0 auto 16px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
     color: var(--text-muted);
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    max-width: 260px;
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 300px;
+    margin: 0 auto 32px;
+  }
+
+  .btn-buy {
+    display: inline-block;
+    background: var(--wine);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 18px 36px;
+    border-radius: 50px;
+    letter-spacing: 0.3px;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .btn-buy:active { transform: scale(0.97); background: var(--wine-light); }
+
+  .price-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .price-note strong {
+    color: var(--wine);
+    font-weight: 600;
+  }
+
+  /* ─── PROBLEM ─── */
+  .section-problem {
+    background: var(--wine);
+    padding: 56px 28px;
+    text-align: center;
+  }
+
+  .section-problem h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .section-problem p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+    max-width: 320px;
     margin: 0 auto;
-    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .section-problem .gold-line {
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+    margin: 16px auto;
+    opacity: 0.6;
+  }
+
+  /* ─── INCLUDES ─── */
+  .section-includes {
+    padding: 56px 28px;
+    background: var(--white);
+    text-align: center;
   }
 
   .section-label {
@@ -95,655 +159,486 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--rose);
-    text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
-  .categories-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .section-includes h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--wine);
+    margin-bottom: 32px;
+  }
+
+  .includes-list {
+    list-style: none;
+    max-width: 320px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .includes-list li {
+    display: flex;
+    align-items: flex-start;
     gap: 12px;
-    width: 100%;
-    max-width: 380px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-main);
+  }
+
+  .includes-list li .icon {
+    width: 28px;
+    height: 28px;
+    background: var(--gold-pale);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 13px;
+    margin-top: 1px;
+  }
+
+  /* ─── EXAMPLES ─── */
+  .section-examples {
+    padding: 56px 24px;
+    background: var(--cream);
+    text-align: center;
+  }
+
+  .section-examples h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--wine);
+    margin-bottom: 8px;
+  }
+
+  .section-examples .sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  .example-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 360px;
     margin: 0 auto;
   }
 
-  .cat-card {
+  .example-card {
     background: var(--white);
-    border-radius: var(--radius);
-    padding: 20px 16px;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1.5px solid transparent;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    border-radius: 18px;
+    padding: 22px 24px;
+    text-align: left;
+    border: 1px solid var(--rose-pale);
   }
 
-  .cat-card:active { transform: scale(0.96); }
-
-  .cat-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.2s;
-    border-radius: var(--radius);
-  }
-
-  .cat-card:hover::before { opacity: 1; }
-
-  .cat-card.wide {
-    grid-column: 1 / -1;
-  }
-
-  .cat-emoji {
-    font-size: 28px;
-    margin-bottom: 8px;
-    display: block;
-  }
-
-  .cat-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
+  .example-cat {
+    font-size: 10px;
     font-weight: 600;
-    color: var(--wine);
-    display: block;
-    margin-bottom: 3px;
-  }
-
-  .cat-desc {
-    font-size: 11px;
-    color: var(--text-muted);
-    font-weight: 300;
-    line-height: 1.4;
-  }
-
-  /* Category card colors */
-  .cat-pareja { border-color: rgba(107,31,42,0.15); background: linear-gradient(145deg, #fff 0%, #fdf0f0 100%); }
-  .cat-profundo { border-color: rgba(60,40,90,0.15); background: linear-gradient(145deg, #fff 0%, #f5f0fc 100%); }
-  .cat-picante { border-color: rgba(180,80,60,0.15); background: linear-gradient(145deg, #fff 0%, #fdf5f0 100%); }
-  .cat-reconciliacion { border-color: rgba(40,90,80,0.15); background: linear-gradient(145deg, #fff 0%, #f0faf8 100%); }
-  .cat-cita { border-color: rgba(200,160,76,0.25); background: linear-gradient(145deg, #fff 0%, #fdf9ee 100%); }
-  .cat-amigos { border-color: rgba(50,100,180,0.15); background: linear-gradient(145deg, #fff 0%, #f0f4fd 100%); }
-  .cat-familia { border-color: rgba(60,130,60,0.15); background: linear-gradient(145deg, #fff 0%, #f0faf0 100%); }
-  .cat-aleatoria { border-color: rgba(107,31,42,0.3); background: var(--wine); }
-  .cat-aleatoria .cat-name { color: var(--gold); }
-  .cat-aleatoria .cat-desc { color: rgba(255,255,255,0.65); }
-
-  .home-footer {
-    margin-top: 32px;
-    text-align: center;
-    font-size: 11px;
-    color: var(--rose);
-    letter-spacing: 0.5px;
-  }
-
-  /* ─── GAME SCREEN ─── */
-  #game {
-    display: none;
-    min-height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(160deg, var(--dark) 0%, var(--dark-mid) 100%);
-    padding: 0 20px 40px;
-  }
-
-  .game-header {
-    width: 100%;
-    max-width: 380px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 24px 0 20px;
-  }
-
-  .back-btn {
-    background: rgba(255,255,255,0.08);
-    border: none;
-    color: rgba(255,255,255,0.7);
-    font-size: 13px;
-    font-family: 'Inter', sans-serif;
-    padding: 8px 14px;
-    border-radius: 50px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.2s;
-  }
-
-  .back-btn:hover { background: rgba(255,255,255,0.14); }
-
-  .game-cat-badge {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
-    color: var(--gold);
-    background: rgba(201,168,76,0.15);
-    padding: 6px 14px;
-    border-radius: 50px;
-    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--rose);
+    margin-bottom: 10px;
   }
 
-  .counter {
-    font-size: 12px;
-    color: rgba(255,255,255,0.4);
-    font-weight: 300;
+  .example-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--text-main);
   }
 
-  /* The card */
-  .question-card {
-    width: 100%;
-    max-width: 380px;
+  /* ─── FOR WHO ─── */
+  .section-forwho {
     background: var(--white);
-    border-radius: 28px;
-    padding: 40px 32px 36px;
-    position: relative;
-    margin-top: 12px;
-    box-shadow: var(--card-shadow), 0 0 0 1px rgba(201,168,76,0.15);
-    min-height: 280px;
+    padding: 56px 28px;
+    text-align: center;
+  }
+
+  .section-forwho h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--wine);
+    margin-bottom: 28px;
+  }
+
+  .forwho-list {
+    list-style: none;
+    max-width: 320px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    gap: 12px;
+    text-align: left;
   }
 
-  .card-ornament {
+  .forwho-list li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-main);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .forwho-list li::before {
+    content: '✦';
     position: absolute;
-    top: 20px;
-    right: 24px;
+    left: 0;
+    color: var(--gold);
+    font-size: 10px;
+    top: 4px;
+  }
+
+  /* ─── CATEGORIES ─── */
+  .section-cats {
+    background: var(--cream-dark);
+    padding: 56px 24px;
+    text-align: center;
+  }
+
+  .section-cats h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--wine);
+    margin-bottom: 28px;
+  }
+
+  .cats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .cat-pill {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 16px 12px;
+    text-align: center;
+    border: 1px solid var(--rose-pale);
+  }
+
+  .cat-pill .emoji { font-size: 22px; display: block; margin-bottom: 6px; }
+  .cat-pill .name { font-size: 13px; font-weight: 500; color: var(--wine); }
+
+  /* ─── PRICING ─── */
+  .section-price {
+    background: var(--wine);
+    padding: 60px 28px;
+    text-align: center;
+  }
+
+  .price-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 36px 28px;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .price-card .edition {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     color: var(--rose);
-    opacity: 0.7;
+    margin-bottom: 8px;
   }
 
-  .card-symbol {
+  .price-card h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: var(--wine);
-    opacity: 0.15;
-    margin-bottom: 20px;
-    line-height: 1;
-  }
-
-  .question-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 400;
-    line-height: 1.45;
-    color: var(--text-main);
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 8px 0 24px;
+    color: var(--wine);
+    margin-bottom: 20px;
   }
 
-  .card-footer {
+  .price-amount {
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--wine);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .price-amount span {
+    font-size: 20px;
+    font-weight: 400;
+    vertical-align: super;
+  }
+
+  .price-local {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    font-weight: 300;
+  }
+
+  .price-features {
+    list-style: none;
+    margin-bottom: 28px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-align: left;
   }
 
-  .btn-primary {
-    background: var(--wine);
-    color: var(--white);
-    border: none;
-    border-radius: 50px;
-    padding: 16px 24px;
-    font-size: 15px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    cursor: pointer;
-    width: 100%;
-    transition: background 0.2s, transform 0.1s;
+  .price-features li {
+    font-size: 13px;
+    color: var(--text-main);
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    letter-spacing: 0.2px;
-  }
-
-  .btn-primary:active { transform: scale(0.97); background: var(--wine-light); }
-
-  .btn-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
 
-  .btn-secondary {
-    background: transparent;
-    color: var(--text-muted);
-    border: 1.5px solid var(--rose-pale);
-    border-radius: 50px;
-    padding: 13px 16px;
-    font-size: 13px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
+  .price-features li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
   }
 
-  .btn-secondary:hover { background: var(--rose-pale); color: var(--wine); border-color: var(--rose); }
-  .btn-secondary:active { transform: scale(0.96); }
-
-  /* Hint text below card */
-  .hint-text {
-    color: rgba(255,255,255,0.3);
-    font-size: 11px;
-    text-align: center;
+  .guarantee {
     margin-top: 20px;
-    letter-spacing: 0.5px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
   }
 
-  /* Toast notification */
-  .toast {
-    position: fixed;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%) translateY(80px);
-    background: var(--dark);
-    color: var(--white);
-    padding: 12px 24px;
-    border-radius: 50px;
+  /* ─── FAQ ─── */
+  .section-faq {
+    background: var(--white);
+    padding: 56px 28px;
+  }
+
+  .section-faq h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--wine);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .faq-item {
+    max-width: 360px;
+    margin: 0 auto 24px;
+    border-bottom: 1px solid var(--rose-pale);
+    padding-bottom: 20px;
+  }
+
+  .faq-q {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--wine);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .faq-a {
     font-size: 13px;
-    font-weight: 500;
-    border: 1px solid rgba(201,168,76,0.3);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    z-index: 999;
-    white-space: nowrap;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-weight: 300;
   }
 
-  .toast.show { transform: translateX(-50%) translateY(0); }
-
-  /* Card flip animation */
-  .question-card.flip-out {
-    opacity: 0;
-    transform: translateY(12px) scale(0.97);
+  /* ─── CLOSE ─── */
+  .section-close {
+    background: linear-gradient(170deg, var(--cream) 0%, var(--rose-pale) 100%);
+    padding: 60px 28px;
+    text-align: center;
   }
 
-  .question-card.flip-in {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  .section-close h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--wine);
+    line-height: 1.4;
+    max-width: 300px;
+    margin: 0 auto 24px;
   }
 
-  /* Decorative dots on home */
-  .deco-line {
-    width: 40px;
-    height: 1px;
-    background: var(--rose);
-    margin: 12px auto 24px;
-    opacity: 0.5;
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--dark);
+    padding: 28px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    font-weight: 300;
   }
 
-  @media (max-width: 360px) {
-    .logo-title { font-size: 36px; }
-    .question-text { font-size: 19px; }
-    .question-card { padding: 32px 24px 28px; }
+  @media (min-width: 600px) {
+    .hero h1 { font-size: 56px; }
+    .hero-headline { font-size: 28px; max-width: 420px; }
+    .example-cards { display: grid; grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════ HOME ═══════════════════════════════ -->
-<div id="home">
-  <div class="logo-area">
-    <div class="logo-symbol"></div>
-    <h1 class="logo-title">Conecta</h1>
-    <div class="deco-line"></div>
-    <p class="logo-tagline">Preguntas y retos para hablar mejor, reír más y conectar de verdad</p>
-  </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="logo-symbol">✦</div>
+  <h1>Conecta</h1>
+  <div class="deco-line"></div>
+  <p class="hero-headline">Convierte cualquier noche normal en una conversación que conecte.</p>
+  <p class="hero-sub">Un juego digital de preguntas y retos para parejas, citas, amigos y familia. Desde tu celular, sin descargar nada.</p>
+  <a href="https://awsquiz.lemonsqueezy.com/checkout/buy/dced1b07-c202-47be-bd20-72ffa5109a19" class="btn-buy">Comprar Conecta — $9.99</a>
+  <p class="price-note">También disponible por <strong>RD$595</strong> · Acceso inmediato</p>
+</section>
 
-  <p class="section-label">Elige una categoría</p>
+<!-- PROBLEM -->
+<section class="section-problem">
+  <h2>A veces no falta amor.<br>Falta una buena pregunta.</h2>
+  <div class="gold-line"></div>
+  <p>Muchas parejas se quieren, pero terminan hablando siempre de lo mismo: trabajo, problemas, dinero, cansancio, rutina. Conecta te da una excusa sencilla para abrir conversaciones distintas.</p>
+</section>
 
-  <div class="categories-grid">
-    <div class="cat-card cat-pareja" onclick="startGame('pareja')">
-      <span class="cat-emoji">❤️</span>
-      <span class="cat-name">Pareja</span>
-      <span class="cat-desc">Para hablar de corazón</span>
-    </div>
-    <div class="cat-card cat-profundo" onclick="startGame('profundo')">
-      <span class="cat-emoji">🌙</span>
-      <span class="cat-name">Profundo</span>
-      <span class="cat-desc">Preguntas íntimas y reales</span>
-    </div>
-    <div class="cat-card cat-picante" onclick="startGame('picante')">
-      <span class="cat-emoji">🌹</span>
-      <span class="cat-name">Picante elegante</span>
-      <span class="cat-desc">Sensual, adulto, sin vulgaridad</span>
-    </div>
-    <div class="cat-card cat-reconciliacion" onclick="startGame('reconciliacion')">
-      <span class="cat-emoji">🕊️</span>
-      <span class="cat-name">Reconciliación</span>
-      <span class="cat-desc">Para sanar y reconectar</span>
-    </div>
-    <div class="cat-card cat-cita" onclick="startGame('cita')">
-      <span class="cat-emoji">✨</span>
-      <span class="cat-name">Primera cita</span>
-      <span class="cat-desc">Ligero, coqueto, divertido</span>
-    </div>
-    <div class="cat-card cat-amigos" onclick="startGame('amigos')">
-      <span class="cat-emoji">🎲</span>
-      <span class="cat-name">Amigos</span>
-      <span class="cat-desc">Para reírse juntos</span>
-    </div>
-    <div class="cat-card cat-familia" onclick="startGame('familia')">
-      <span class="cat-emoji">🏡</span>
-      <span class="cat-name">Familia</span>
-      <span class="cat-desc">Conversaciones que quedan</span>
-    </div>
-    <div class="cat-card cat-aleatoria wide" onclick="startGame('aleatoria')">
-      <span class="cat-emoji">🎴</span>
-      <span class="cat-name">Aleatoria — sorpréndeme</span>
-      <span class="cat-desc">Una pregunta de cualquier categoría</span>
-    </div>
-  </div>
+<!-- INCLUDES -->
+<section class="section-includes">
+  <p class="section-label">Qué incluye</p>
+  <h2>Todo lo que necesitas para jugar</h2>
+  <ul class="includes-list">
+    <li><span class="icon">🎮</span><div><strong>Juego web interactivo</strong> — Se abre desde el celular, sin app, sin descarga.</div></li>
+    <li><span class="icon">💬</span><div><strong>Versión para WhatsApp</strong> — Cada pregunta tiene botón para enviar directo.</div></li>
+    <li><span class="icon">❤️</span><div><strong>160+ preguntas reales</strong> — Románticas, profundas, divertidas, picantes y más.</div></li>
+    <li><span class="icon">🗂️</span><div><strong>7 categorías de juego</strong> — Pareja, Profundo, Picante elegante, Reconciliación, Primera cita, Amigos y Familia.</div></li>
+    <li><span class="icon">⚡</span><div><strong>Acceso inmediato</strong> — Después del pago recibes el link para jugar.</div></li>
+  </ul>
+</section>
 
-  <p class="home-footer">Juega desde tu celular · Sin descargar nada</p>
-</div>
-
-<!-- ═══════════════════════════════ GAME ═══════════════════════════════ -->
-<div id="game">
-  <div class="game-header">
-    <button class="back-btn" onclick="goHome()">← Categorías</button>
-    <span class="game-cat-badge" id="cat-badge">Pareja</span>
-    <span class="counter" id="counter">1 / 20</span>
-  </div>
-
-  <div class="question-card" id="question-card">
-    <div>
-      <div class="card-ornament" id="card-ornament">Pareja</div>
-      <div class="card-symbol">✦</div>
-      <p class="question-text" id="question-text">Cargando...</p>
+<!-- EXAMPLES -->
+<section class="section-examples">
+  <p class="section-label">Ejemplos de preguntas</p>
+  <h2>Así se siente jugar</h2>
+  <p class="sub">Preguntas que abren conversaciones que no sabías que necesitabas.</p>
+  <div class="example-cards">
+    <div class="example-card">
+      <p class="example-cat">❤️ Pareja</p>
+      <p class="example-q">¿Qué cosa pequeña hago que te hace sentir amado/a sin que yo lo note?</p>
     </div>
-    <div class="card-footer">
-      <button class="btn-primary" onclick="nextQuestion()">
-        ✦ &nbsp; Otra pregunta
-      </button>
-      <div class="btn-row">
-        <button class="btn-secondary" onclick="copyQuestion()">📋 &nbsp;Copiar</button>
-        <button class="btn-secondary" onclick="shareWhatsApp()">💬 &nbsp;WhatsApp</button>
-      </div>
+    <div class="example-card">
+      <p class="example-cat">🌙 Profundo</p>
+      <p class="example-q">¿Qué parte de ti casi nadie conoce realmente?</p>
+    </div>
+    <div class="example-card">
+      <p class="example-cat">🌹 Picante elegante</p>
+      <p class="example-q">¿Qué gesto mío te provoca sin que yo lo esté buscando?</p>
+    </div>
+    <div class="example-card">
+      <p class="example-cat">🕊️ Reconciliación</p>
+      <p class="example-q">¿Qué necesitas para sentirte verdaderamente escuchado/a?</p>
+    </div>
+    <div class="example-card">
+      <p class="example-cat">✨ Primera cita</p>
+      <p class="example-q">¿Qué cosa haría que alguien te encantara en una primera conversación?</p>
+    </div>
+    <div class="example-card">
+      <p class="example-cat">🎲 Amigos</p>
+      <p class="example-q">¿Quién del grupo sobreviviría mejor en una isla desierta y por qué?</p>
     </div>
   </div>
+</section>
 
-  <p class="hint-text">Toca "Otra pregunta" para continuar</p>
-</div>
+<!-- FOR WHO -->
+<section class="section-forwho">
+  <p class="section-label">Para quién es</p>
+  <h2>Conecta es para ti si...</h2>
+  <ul class="forwho-list">
+    <li>Quieres hablar mejor con tu pareja y salir de la rutina.</li>
+    <li>Tienes una cita y quieres que fluya de verdad.</li>
+    <li>Quieres conocer mejor a alguien que te importa.</li>
+    <li>Buscas una noche divertida con amigos sin complicarte.</li>
+    <li>Quieres hacer preguntas que normalmente no sabes cómo empezar.</li>
+    <li>Sientes que tus conversaciones son siempre las mismas.</li>
+  </ul>
+</section>
 
-<div class="toast" id="toast">✓ Copiado</div>
+<!-- CATEGORIES -->
+<section class="section-cats">
+  <p class="section-label">Categorías</p>
+  <h2>7 formas de conectar</h2>
+  <div class="cats-grid">
+    <div class="cat-pill"><span class="emoji">❤️</span><span class="name">Pareja</span></div>
+    <div class="cat-pill"><span class="emoji">🌙</span><span class="name">Profundo</span></div>
+    <div class="cat-pill"><span class="emoji">🌹</span><span class="name">Picante elegante</span></div>
+    <div class="cat-pill"><span class="emoji">🕊️</span><span class="name">Reconciliación</span></div>
+    <div class="cat-pill"><span class="emoji">✨</span><span class="name">Primera cita</span></div>
+    <div class="cat-pill"><span class="emoji">🎲</span><span class="name">Amigos</span></div>
+    <div class="cat-pill" style="grid-column: 1/-1;"><span class="emoji">🏡</span><span class="name">Familia</span></div>
+  </div>
+</section>
 
-<script>
-const QUESTIONS = {
-  pareja: [
-    "¿Qué cosa pequeña hago que te hace sentir amado/a sin que yo lo note?",
-    "¿Qué momento nuestro repetirías exactamente como fue?",
-    "¿Qué te hizo sentir que yo era especial desde el principio?",
-    "¿Qué parte de nuestra relación quieres cuidar más este año?",
-    "¿Qué es lo que más extrañas de cuando empezamos?",
-    "¿Cómo preferirías que te demostrara que te quiero sin palabras?",
-    "¿Hay algo que sientes que no me has podido decir todavía?",
-    "¿Qué hábito nuestro te hace más feliz de los que ni siquiera notamos?",
-    "¿Qué canción nos describiría mejor ahora mismo?",
-    "¿Qué es lo que más admiras de mí que casi nunca me dices?",
-    "¿Cuándo fue la última vez que sentiste que nos reconectamos de verdad?",
-    "¿Qué sueño tuyo me gustaría que yo apoyara más?",
-    "¿Hay algo que hago diferente ahora y que te gusta más que antes?",
-    "¿Qué ritual nuestro quisieras que no desapareciera nunca?",
-    "¿Qué pregunta llevas tiempo queriendo hacerme?",
-    "¿Qué te gusta de cómo manejamos los problemas juntos?",
-    "¿Qué parte de ti siento que todavía no conozco bien?",
-    "¿Cómo te imaginas nuestra vida dentro de diez años?",
-    "¿Qué necesitas de mí que a veces no sabes cómo pedirme?",
-    "¿Qué es lo que más te hace sentir seguro/a en esta relación?",
-    "¿Hay algo que hayas perdonado pero que aún lleves guardado?",
-    "¿Qué cosa de nuestra historia nunca contarías sin sonreír?",
-    "¿Qué momento nuestro te gustó más de este mes?",
-    "¿Hay algo que te gustaría que fuera diferente sin que fuera a herir mis sentimientos?",
-    "¿Qué es lo que más aprecias de cómo te trato en público?",
-  ],
-  profundo: [
-    "¿Qué miedo te cuesta más admitir en voz alta?",
-    "¿Qué parte de ti casi nadie conoce realmente?",
-    "¿Qué herida todavía estás aprendiendo a sanar?",
-    "¿Qué necesitas escuchar más seguido y casi nunca escuchas?",
-    "¿Qué decisión tuya te costó más pero no te arrepientes?",
-    "¿Cuándo fue la última vez que lloraste de verdad y por qué?",
-    "¿Qué versión de ti mismo/a ya dejaste atrás y qué piensas de ella?",
-    "¿Hay algo que hayas aprendido muy tarde y que desearías haber entendido antes?",
-    "¿Qué es lo que más te asusta del futuro si eres honesto/a?",
-    "¿Qué persona ha cambiado tu vida para siempre sin saberlo?",
-    "¿Qué cosa te da vergüenza admitir que todavía te duele?",
-    "¿Qué es lo que más anhelas que todavía no tienes?",
-    "¿Hay algo que haces por los demás y que nadie nota?",
-    "¿Qué te hace sentir más vivo/a en este momento de tu vida?",
-    "¿Cuál es la creencia tuya que más ha cambiado en los últimos años?",
-    "¿Qué parte de tu pasado te cuesta dejar ir?",
-    "¿Qué es lo que más te cuesta perdonarte a ti mismo/a?",
-    "¿Qué versión de tu vida soñabas que tendría y aún no tiene?",
-    "¿Cuándo te sientes más solo/a aunque estés con gente?",
-    "¿Qué es lo que más te da paz cuando todo se siente difícil?",
-    "¿Hay algo que hayas hecho por amor que no volverías a hacer?",
-    "¿Qué te hace sentir que realmente importas?",
-    "¿Qué parte de ti defiendes ante el mundo pero en secreto cuestionas?",
-    "¿Qué sería lo peor que alguien podría pensar de ti si te conociera de verdad?",
-    "¿Hay algún sueño que guardaste en un cajón y que merece volver a abrirse?",
-  ],
-  picante: [
-    "¿Qué gesto mío te provoca sin que yo lo esté buscando?",
-    "¿Qué recuerdo íntimo nuestro piensas más de lo que admitirías?",
-    "¿Qué parte de mí te atrae de una forma que no sabes bien cómo explicar?",
-    "¿Qué es algo que te gustaría que hiciéramos más seguido?",
-    "¿Hay algo que yo haga que te derrite pero que nunca me has dicho?",
-    "¿Qué parte de tu cuerpo preferirías que yo prestara más atención?",
-    "¿Qué escenario romántico tuyo me imaginarías en él/ella?",
-    "¿Cuál es el mensaje mío que más te ha hecho sonrojar?",
-    "¿Qué cosa nuestra que nadie sabe te gusta tener solo para ti?",
-    "¿Qué es algo que fantaseas sin haber dicho todavía?",
-    "¿Cuándo me deseas más: de día o de noche, y por qué?",
-    "¿Qué te gustaría probar juntos que nunca hemos hecho?",
-    "¿Hay algo que yo haga que activa algo en ti instantáneamente?",
-    "¿Qué parte de una noche nuestro guardarías para siempre?",
-    "¿Qué palabra mía tiene más poder sobre ti del que imaginas?",
-    "¿Hay algo que te hace querer estar más cerca de mí sin razón aparente?",
-    "¿Qué te gusta sentir cuando estamos solos que no pasa con nadie más?",
-    "¿Hay una versión mía que te resulta especialmente irresistible?",
-    "¿Qué me pedirías si supieras que sí diría que sí?",
-    "¿Qué momento nuestro en privado guarda tu memoria favorita?",
-  ],
-  reconciliacion: [
-    "¿Qué te dolió de mí que todavía no he entendido bien?",
-    "¿Qué necesitas para sentirte verdaderamente escuchado/a?",
-    "¿Qué puedo hacer diferente la próxima vez que no estemos de acuerdo?",
-    "¿Qué frase mía te ayudaría a sentirte más seguro/a conmigo?",
-    "¿Hay algo que hayas querido decirme y que todavía no hayas podido?",
-    "¿Qué parte de nuestra discusión sientes que yo no vi desde tu lado?",
-    "¿Qué es lo que más necesitas de mí ahora mismo?",
-    "¿Hay algo que hago cuando discutimos que te afecta más de lo que crees que sé?",
-    "¿Qué te hace sentir que vale la pena seguir trabajando en esto?",
-    "¿Qué crees que yo necesito de ti que no te he sabido pedir bien?",
-    "¿Qué parte nuestra crees que tenemos que proteger más?",
-    "¿Hay algo que yo haya dicho sin pensar que todavía te pesa?",
-    "¿Cómo te gustaría que te buscara cuando hay una distancia entre los dos?",
-    "¿Qué significaría para ti que yo cambiara algo puntual?",
-    "¿Hay algo que podrías dejar ir si yo te pidiera perdón de verdad?",
-    "¿Qué es lo que más extrañas de cuando estábamos bien?",
-    "¿Qué te haría sentir que empezamos de nuevo sin borrar lo que vivimos?",
-    "¿Qué parte de ti necesita más paciencia de la que te estoy dando?",
-    "¿Hay algo que hayas guardado solo para no herir y que ya necesita salir?",
-    "¿Qué parte nuestra sabes que no quieres perder a pesar de todo?",
-  ],
-  cita: [
-    "¿Cuál sería una cita perfecta para ti sin mencionar ningún lugar?",
-    "¿Qué red flag no negocias sin importar lo atractivo/a que sea la persona?",
-    "¿Qué canción describe cómo te sientes con tu vida ahora mismo?",
-    "¿Qué es algo raro que te gusta que la mayoría no entendería?",
-    "¿Eres de los que prefieren decir lo que sienten rápido o tardas en abrirte?",
-    "¿Qué cosa haría que alguien te encantara en una primera conversación?",
-    "¿Qué es lo último que te sorprendió para bien de alguien que conociste?",
-    "¿Cómo sabes que alguien realmente te está escuchando?",
-    "¿Hay algo que definitivamente no aparece en tu perfil de redes y que te define?",
-    "¿Cuál es el mejor cumplido que alguien te ha dado?",
-    "¿Qué cosa hace que quieras volver a ver a alguien después de conocerlo?",
-    "¿Cuál sería tu noche ideal de viernes sin planificarla demasiado?",
-    "¿Qué tipo de persona te hace sentir más tú mismo/a?",
-    "¿Tienes alguna teoría personal sobre lo que hace que dos personas se entiendan bien?",
-    "¿Qué aventura te gustaría vivir que todavía no has tenido?",
-    "¿Qué parte de ti la gente descubre luego que la conoce bien?",
-    "¿Cuál es el plan que rechazas siempre pero que en el fondo disfrutas?",
-    "¿Qué es algo que haría que esta noche valiera la pena recordarla?",
-    "¿Cuál es el mejor consejo que te han dado sobre relaciones?",
-    "¿Qué tipo de cosas te hacen reír sin poder parar?",
-  ],
-  amigos: [
-    "¿Quién del grupo se casaría por impulso en Las Vegas sin avisar?",
-    "¿Quién sobreviviría mejor en una isla desierta y por qué?",
-    "¿Quién del grupo tendría más peligro con fama, dinero y tiempo libre?",
-    "¿Cuál ha sido el momento más absurdo que hemos vivido juntos?",
-    "¿Quién del grupo terminaría en un reality y cuál sería?",
-    "¿A quién llamarías a las 3 AM si necesitas ayuda de verdad?",
-    "¿Cuál canción nos representa como grupo sin pensar demasiado?",
-    "¿Qué plan loco propuesto en este grupo nunca llegó a pasar pero debería?",
-    "¿Quién del grupo cambió más en los últimos dos años?",
-    "¿Cuál sería el trabajo que cada uno del grupo no duraría ni un mes?",
-    "Si tuvieras que describir a alguien del grupo con solo tres palabras, ¿cómo lo harías?",
-    "¿Qué chiste interno nuestro nunca va a dejar de hacernos reír?",
-    "¿Quién del grupo mentiría con la cara más tranquila?",
-    "¿Cuál es el momento donde alguien del grupo te salvó de una situación difícil?",
-    "¿A quién de aquí le quedaría el papel de villano en una película?",
-  ],
-  familia: [
-    "¿Qué recuerdo familiar te gustaría repetir exactamente como fue?",
-    "¿Qué tradición deberíamos recuperar que hemos dejado ir?",
-    "¿Qué aprendiste de alguien de esta familia sin que ellos se lo propusieran?",
-    "¿Qué deberíamos hablar más en casa que casi nunca hablamos?",
-    "¿Qué es lo que más te gusta de cómo somos como familia?",
-    "¿Hay algo que quisieras agradecerle a alguien de aquí que nunca has dicho?",
-    "¿Qué momento familiar guardarías para siempre si pudieras?",
-    "¿Qué crees que nos hace únicos comparado con otras familias?",
-    "¿Hay algo que aprendiste de esta familia que llevas a todos lados?",
-    "¿Qué tradición nueva deberíamos empezar a construir?",
-    "¿Hay algo que sientas que nunca hemos podido decirnos y que sería bueno decir?",
-    "¿Qué persona de la familia te inspira más y por qué?",
-    "¿Cuál es el momento más divertido que recuerdas de esta familia?",
-    "¿Qué consejo de alguien de aquí te ha quedado para siempre?",
-    "¿Cómo describirías nuestra familia a alguien que no la conoce?",
-  ]
-};
+<!-- PRICING -->
+<section class="section-price">
+  <div class="price-card">
+    <p class="edition">Edición Fundadora</p>
+    <h2>Conecta Parejas</h2>
+    <div class="price-amount"><span>$</span>9.99</div>
+    <p class="price-local">RD$595 · Pago único, sin suscripción</p>
+    <ul class="price-features">
+      <li>Juego web para celular y computadora</li>
+      <li>160+ preguntas en 7 categorías</li>
+      <li>Botón para compartir por WhatsApp</li>
+      <li>Acceso inmediato y de por vida</li>
+      <li>Sin app, sin descarga</li>
+    </ul>
+    <a href="https://awsquiz.lemonsqueezy.com/checkout/buy/dced1b07-c202-47be-bd20-72ffa5109a19" class="btn-buy" style="display:block; text-align:center;">Comprar ahora — $9.99</a>
+  </div>
+  <p class="guarantee">✓ Acceso inmediato después del pago</p>
+</section>
 
-let currentCat = 'pareja';
-let usedIndexes = [];
-let questionCount = 0;
+<!-- FAQ -->
+<section class="section-faq">
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq-item">
+    <p class="faq-q">¿Necesito descargar una app?</p>
+    <p class="faq-a">No. Conecta se juega directo desde el navegador de tu celular. Sin descargas, sin instalaciones.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Puedo usarlo con mi pareja por WhatsApp?</p>
+    <p class="faq-a">Sí. Cada pregunta tiene un botón para enviarla directo a WhatsApp, lista para usar.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿El contenido picante es explícito?</p>
+    <p class="faq-a">No. El modo Picante elegante es sensual y adulto, pero sin vulgaridad. Pensado para parejas.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Funciona para amigos y familia también?</p>
+    <p class="faq-a">Sí. Incluye categorías específicas para amigos, familia y primeras citas.</p>
+  </div>
+  <div class="faq-item">
+    <p class="faq-q">¿Cómo accedo después de pagar?</p>
+    <p class="faq-a">Inmediatamente. Después del pago recibes el link para jugar al instante.</p>
+  </div>
+</section>
 
-const catNames = {
-  pareja: 'Pareja',
-  profundo: 'Profundo',
-  picante: 'Picante elegante',
-  reconciliacion: 'Reconciliación',
-  cita: 'Primera cita',
-  amigos: 'Amigos',
-  familia: 'Familia',
-  aleatoria: 'Aleatoria'
-};
+<!-- CLOSE -->
+<section class="section-close">
+  <h2>"Una buena pregunta puede cambiar una noche entera."</h2>
+  <a href="https://awsquiz.lemonsqueezy.com/checkout/buy/dced1b07-c202-47be-bd20-72ffa5109a19" class="btn-buy">Quiero jugar Conecta</a>
+  <p style="margin-top:14px; font-size:12px; color:var(--text-muted);">Acceso inmediato · $9.99 USD · RD$595</p>
+</section>
 
-function startGame(cat) {
-  currentCat = cat;
-  usedIndexes = [];
-  questionCount = 0;
+<footer>
+  © 2025 Conecta · Hecho con intención para conversaciones reales
+</footer>
 
-  const badge = document.getElementById('cat-badge');
-  const ornament = document.getElementById('card-ornament');
-  badge.textContent = catNames[cat];
-  ornament.textContent = catNames[cat];
-
-  document.getElementById('home').style.display = 'none';
-  const gameEl = document.getElementById('game');
-  gameEl.style.display = 'flex';
-
-  showQuestion(false);
-}
-
-function getPool() {
-  if (currentCat === 'aleatoria') {
-    let all = [];
-    Object.values(QUESTIONS).forEach(arr => { all = all.concat(arr); });
-    return all;
-  }
-  return QUESTIONS[currentCat];
-}
-
-function showQuestion(animate) {
-  const pool = getPool();
-  if (usedIndexes.length >= pool.length) usedIndexes = [];
-
-  let idx;
-  do { idx = Math.floor(Math.random() * pool.length); }
-  while (usedIndexes.includes(idx));
-
-  usedIndexes.push(idx);
-  questionCount++;
-
-  const countEl = document.getElementById('counter');
-  countEl.textContent = `${questionCount} / ${pool.length}`;
-
-  const card = document.getElementById('question-card');
-  const textEl = document.getElementById('question-text');
-
-  if (animate) {
-    card.classList.add('flip-out');
-    setTimeout(() => {
-      textEl.textContent = pool[idx];
-      card.classList.remove('flip-out');
-      card.classList.add('flip-in');
-      setTimeout(() => card.classList.remove('flip-in'), 250);
-    }, 220);
-  } else {
-    textEl.textContent = pool[idx];
-  }
-}
-
-function nextQuestion() {
-  showQuestion(true);
-}
-
-function goHome() {
-  document.getElementById('game').style.display = 'none';
-  document.getElementById('home').style.display = 'flex';
-}
-
-function copyQuestion() {
-  const q = document.getElementById('question-text').textContent;
-  navigator.clipboard.writeText(q).then(() => showToast('✓ Copiado')).catch(() => {
-    const ta = document.createElement('textarea');
-    ta.value = q;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    showToast('✓ Copiado');
-  });
-}
-
-function shareWhatsApp() {
-  const q = document.getElementById('question-text').textContent;
-  const msg = `*Conecta* ✦\n\n_${q}_\n\n¿Qué respondes? 🙂`;
-  window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
-}
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2000);
-}
-</script>
 </body>
 </html>
