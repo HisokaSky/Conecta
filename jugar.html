@@ -86,7 +86,9 @@
     <div class="cat-card cat-cita" onclick="startGame('cita')"><span class="cat-emoji">✨</span><span class="cat-name">Primera cita</span><span class="cat-desc">Ligero, coqueto, divertido</span></div>
     <div class="cat-card cat-amigos" onclick="startGame('amigos')"><span class="cat-emoji">🎲</span><span class="cat-name">Amigos</span><span class="cat-desc">Para reírse juntos</span></div>
     <div class="cat-card cat-familia" onclick="startGame('familia')"><span class="cat-emoji">🏡</span><span class="cat-name">Familia</span><span class="cat-desc">Conversaciones que quedan</span></div>
-    <div class="cat-card cat-aleatoria wide" onclick="startGame('aleatoria')"><span class="cat-emoji">🎴</span><span class="cat-name">Aleatoria — sorpréndeme</span><span class="cat-desc">Una pregunta de cualquier categoría</span></div>
+    <div class="cat-card cat-retos_romanticos" onclick="startGame('retos_romanticos')" style="border-color:rgba(201,168,76,0.3);background:linear-gradient(145deg,#fff 0%,#fdf9ee 100%)"><span class="cat-emoji">💫</span><span class="cat-name">Retos románticos</span><span class="cat-desc">Acción, no solo palabras</span></div>
+    <div class="cat-card cat-retos_divertidos" onclick="startGame('retos_divertidos')" style="border-color:rgba(50,100,180,0.2);background:linear-gradient(145deg,#fff 0%,#f0f4fd 100%)"><span class="cat-emoji">🎭</span><span class="cat-name">Retos divertidos</span><span class="cat-desc">Para reírse sin filtro</span></div>
+    <div class="cat-card cat-aleatoria wide" onclick="startGame('aleatoria')"><span class="cat-emoji">🎴</span><span class="cat-name">Aleatoria — sorpréndeme</span><span class="cat-desc">Una pregunta o reto de cualquier categoría</span></div>
   </div>
   <p class="home-footer">Conecta · Edición Fundadora</p>
 </div>
@@ -641,6 +643,70 @@ const QUESTIONS = {
     "¿Hay algo que sientas que esta familia nunca ha dicho en voz alta pero que todos saben?",
     "¿Qué es lo que más te une a esta familia más allá de la sangre o la historia?",
     "¿Si pudieras darle un regalo a cada persona de esta familia, qué le darías a cada uno?"
+  ],
+  retos_romanticos: [
+    "Dile a tu pareja una cosa que admiras de ella/él que nunca le has dicho con esas palabras exactas.",
+    "Escríbele un mensaje de texto ahora mismo diciéndole lo que más te gusta de su forma de querer.",
+    "Toma su mano y sin decir nada, quédate así por 60 segundos mirándole a los ojos.",
+    "Cuéntale el momento exacto en que te diste cuenta de que esa persona era especial para ti.",
+    "Dile tres cosas que te gustan de cómo luce hoy, siendo lo más específico/a posible.",
+    "Inventa un apodo nuevo para tu pareja que describa algo lindo que ves en ella/él.",
+    "Cuéntale cuál es tu recuerdo favorito de los dos sin que sea el más obvio.",
+    "Deja que tu pareja elija una canción y bailen juntos ahora mismo sin importar el lugar.",
+    "Escríbele una nota a mano con una sola oración que resuma lo que sientes por ella/él.",
+    "Dale un abrazo que dure más de lo normal y no lo sueltes hasta que sea ella/él quien lo haga.",
+    "Cuéntale algo que hiciste pensando en ella/él sin que se haya enterado.",
+    "Dile en voz alta cuál es el futuro que imaginas con ella/él con todos los detalles.",
+    "Planea una mini cita para esta semana — solo explícale cómo sería sin importar si se puede o no.",
+    "Dile algo que te gustaría que supiera de ti que nunca le has dicho por miedo o vergüenza.",
+    "Cuéntale cuál fue la primera vez que pensaste en ella/él cuando no estaban juntos.",
+    "Dile con una sola palabra cómo te hace sentir y luego explica por qué esa palabra.",
+    "Tómale una foto ahora mismo y dile por qué quisiste tomarla.",
+    "Cuéntale qué es lo que más extrañarías de ella/él si un día no pudieran estar juntos.",
+    "Dile algo que nunca te atreverías a decir en público pero que hoy sí puedes decir.",
+    "Descríbele cómo te sientes cuando la/lo ves después de un tiempo sin verla/lo.",
+    "Dile cuál es la versión de ella/él que más te gusta aunque no sea la más obvia.",
+    "Cuéntale qué es lo que más te gusta hacer juntos que parece simple pero que para ti es especial.",
+    "Dile tres cosas que harías por ella/él sin que te las pidiera.",
+    "Cuéntale cuál es el plan que tienes guardado en la mente para sorprenderla/lo algún día.",
+    "Dile algo que alguien dijo de ella/él que te hizo sentir orgulloso/a de estar a su lado.",
+    "Mándale un audio ahora mismo diciéndole algo que no le dices seguido.",
+    "Dile cuál sería la noche perfecta para ti si pudieras diseñarla solo para los dos.",
+    "Cuéntale qué parte de ella/él te parece irresistible en los momentos más cotidianos.",
+    "Dile algo que hayas aprendido de ella/él sin que te lo haya enseñado directamente.",
+    "Cierra los ojos, piensa en el mejor momento que han tenido, y cuéntaselo con todos los detalles."
+  ],
+  retos_divertidos: [
+    "Imita a alguien del grupo o a tu pareja durante 30 segundos sin decir quién es — los demás adivinan.",
+    "Di tres mentiras y una verdad sobre ti. El grupo decide cuál es la verdad.",
+    "Llama o manda un mensaje a alguien que no hablas hace más de un mes. Ahora mismo.",
+    "Haz tu mejor acento de otro país durante las próximas dos preguntas.",
+    "Cuéntale al grupo algo vergonzoso que te haya pasado que nunca has contado aquí.",
+    "Haz una declaración dramática de amor como si fuera una telenovela. Puedes dedicársela a quien quieras.",
+    "Di el nombre de la persona del grupo que más te costaría sobrevivir sin hablar por un mes.",
+    "Muestra el último meme que guardaste en tu celular sin explicación.",
+    "Imita cómo crees que alguien del grupo actúa cuando está nervioso/a.",
+    "Canta el coro de la canción que más te da vergüenza que te guste.",
+    "Describe tu vida amorosa usando solo títulos de películas.",
+    "Dile a alguien del grupo algo que nunca le has dicho porque no encontrabas el momento.",
+    "Muestra la foto más rara de tu galería del celular sin borrar nada antes.",
+    "Haz una mini actuación de cómo sería tu reacción si te ganara la lotería ahora mismo.",
+    "Di en 30 segundos tantos trabalenguas como puedas sin equivocarte.",
+    "Confiesa algo que compraste y que nunca le contaste a nadie porque sabías que no lo aprobarían.",
+    "Describe cómo serías como personaje de villano de película. Ponle nombre y todo.",
+    "Haz tu mejor cara de foto de perfil de LinkedIn y mantente así por 10 segundos.",
+    "Di el nombre completo de alguien del grupo con el tono de voz de un presentador de noticias.",
+    "Confiesa el plan más ridículo que hayas tenido y que en su momento pensaste que era buena idea.",
+    "Actúa cómo crees que alguien del grupo habla cuando está tratando de impresionar a alguien.",
+    "Muestra el último GIF o sticker que enviaste por WhatsApp.",
+    "Di tres cosas que harías con un millón de dólares que sabes que son malas decisiones.",
+    "Describe tu forma de ser en el amor usando solo emojis — los demás interpretan.",
+    "Haz una mini presentación de negocios para vender algo completamente inútil que tengas cerca.",
+    "Confiesa algo que haces solo/a en casa que nunca harías si alguien te estuviera viendo.",
+    "Habla durante 45 segundos sobre un tema completamente aleatorio sin parar ni repetir palabras.",
+    "Imita cómo crees que alguien del grupo actúa cuando está tratando de no reírse.",
+    "Crea un eslogan publicitario para tu propia personalidad en menos de diez segundos.",
+    "Dile a alguien del grupo qué papel tendría en una película de acción y por qué."
   ]
 };
 
@@ -651,7 +717,9 @@ let questionCount = 0;
 const catNames = {
   pareja: 'Pareja', profundo: 'Profundo', picante: 'Picante elegante',
   reconciliacion: 'Reconciliación', cita: 'Primera cita',
-  amigos: 'Amigos', familia: 'Familia', aleatoria: 'Aleatoria'
+  amigos: 'Amigos', familia: 'Familia',
+  retos_romanticos: 'Retos románticos', retos_divertidos: 'Retos divertidos',
+  aleatoria: 'Aleatoria'
 };
 
 function startGame(cat) {
